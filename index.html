@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Mark Hangman</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+    <!-- USING AN ENTIRE CONTAINER FOR THE MAIN CONTENT -->
+    <div class="container">
+        <br>  
+        <h1>Hangman</h1>
+        <br>
+
+        <h4>Instructions:</h4>
+
+        <h5><i>Press a letter key to begin your first guess.<br>
+        Figure out the word to save each word 'thief.'<br>
+        How many 'thieves' can you save?<br>
+        You have a limited number of wrong guesses</i>
+        </h5>
+        <br>
+        <br>   
+
+        <!--Picture, data: ROW OF TWO COLUMNS -->
+        <div class="row">
+            <div class="col-sm-4 border border-primary" style="background-color: rgb(247, 251, 252);">
+                <img width="80%" id="HangmanPic" src="assets/0HangPic.png" alt"Hangman Start">
+                <!--<img width="80%" var id="totalcombined"> alt"Hangman Start">-->
+                <!--<img width="80%" src="assets/HangPic"+remainingGuessCount+".png" alt"Hangman Start">-->
+                <!--<img width="80%" <var id="currImage"></var> alt"Hangman Start">-->
+                <!--<img width="80%" src="assets/0HangPic.png" alt"Hangman Start"> note this one works--> 
+                Hi!
+            </div>
+            
+            <!-- below is second colum of first row -->
+            <div class="col-sm-8 border border-secondary" style="background-color: antiquewhite;">
+
+                    <!--Guess label and number: ROW OF TWO COLUMNS to be put inside the second column of first row -->            
+                    <div class="row">
+                        <div class="col-sm-2 border border-secondary" style="background-color: antiquewhite;">
+                            <h4><var id="guessesLeft"></var></h4></div>
+                        <div class="col-sm-10 border border-primary">
+                            <h5><--- Guesses you have left</h5></div>
+                    </div>
+                    
+                    <!--Win, lose message 2nd row inside second column of first ROW OF ONE COLUMN -->
+                    <div class="row">
+                        <div class="col-sm-12 border border-primary">
+                            <h3><var id="statusMessage"></var></h3><br></div>
+                    </div>  
+                    
+                    <!--Play again message 3nd row inside second column of first ROW OF ONE COLUMN -->
+                    <div class="row">
+                        <div class="col-sm-12 border border-primary" style="background-color: antiquewhite;">
+                            <h4><var id="gameOver"></var></h4><br></div>
+                    </div>  
+
+
+
+                    <!--Letters guessed listed 4th row inside second column of first ROW OF ONE COLUMN -->
+                    <div class="row">
+                        <div class="col-sm-12 border border-primary" style="background-color: antiquewhite;"><h4>
+                            Your letter guesses so far: <var id="userGuesses"></var></h4><h3><span id="userGuesses"></span></h3>
+                            <br></div>
+                    </div>  
+
+                    <!--Placeholder for blank and placed letters  5th row inside second column of first ROW OF ONE COLUMN -->
+                    <div class="row">
+                        <div class="col-sm-12 border border-primary" style="background-color: antiquewhite;">
+                            <p><h3><var id="showPlaceHolderArr"></var><--Letters in word</h3></p><br></div>
+                    </div>
+
+                    <!--Placeholder for Wins and Losses in 6th row inside second column of first ROW OF ONE COLUMN -->
+                     <div class="row">
+                        <div class="col-sm-12 border border-primary" style="background-color: antiquewhite;">
+                            <p><h4><var id="guessesLeft"></var></h4></p><br></div>
+                    </div>                   
+
+
+
+            </div>
+        </div>
+<br><br>
+
+
+        <!--Footer ROW OF ONE COLUMN -->
+        <div class="row">
+            <div class="col-sm-12 border border-primary">Written by Mark 2018.<br></div>
+        </div>  
+    </div>  
+
+  <br><br>
+
+<script type="text/javascript" src="NewHangman.js"></script>
+
+</body>
+
+</html>
