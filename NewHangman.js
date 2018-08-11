@@ -9,6 +9,8 @@
 // --------------------- Variables below ----------------------
 var wins = 0;
 var losses = 0;
+var gamesPlayed = 0;
+var limit = 3;
 var randomWord;
 var guessesLeft;
 var winMessage;
@@ -25,7 +27,7 @@ var images = ["assets/0HangPic.png", "assets/1HangPic.png", "assets/2HangPic.png
 var activeImageIndex = 0;
 
 // Array of words to be used in the game
-var wordList = ['dog', 'row', 'jog', 'cow', 'grow'];
+var wordList = ['dog', 'row', 'jog', 'cow', 'grow','green','top','fun','words','theif','supai','can','codecamp'];
 
 
 //------------------------- Start Game below --------------------
@@ -37,11 +39,14 @@ console.log(randomWordArr);
 
     // store keystroke event
     var letterPressed = event.key;
-    var letterPressed = letterPressed.toLowerCase();  // ADDED TODAY - WORKS
+    var letterPressed = letterPressed.toLowerCase();
 
     var isWinner = !placeHolderArr.includes('__');
     //    alert(isWinner);
     if (guessesLeft === 0 || isWinner === true) {
+        document.getElementById("wins").innerHTML = wins;
+        document.getElementById("losses").innerHTML = losses;
+
 
         return startGame();
     }
@@ -75,7 +80,7 @@ console.log(randomWordArr);
         guessesLeft = guessesLeft - 1;
         activeImageIndex = activeImageIndex + 1;
         console.log(activeImageIndex);
-        document.getElementById("guessesLeft").innerHTML = guessesLeft; // ADDED TODAY
+        document.getElementById("guessesLeft").innerHTML = guessesLeft;
         changeImage();
         
         //alert("'isCorrect' is FALSE");
@@ -85,24 +90,24 @@ console.log(randomWordArr);
             losses = losses + 1;
             activeImageIndex = 8;
             changeImage();
+            gamesplayed = wins + losses;
             //userGuesses = [];
             console.log(guessesLeft);
             console.log(losses);
-            alert("Sorry, this word thief can't spell!"); 
-            
+            alert("Sorry, this word thief can't spell!");          
             //setTimeout(startGame,3000);        
             //return startGame();
         }
     }
 
-    // Call function to update the DOM with the placeHolder array  ????????
+    // Call function to update the DOM with the placeHolder array
     revealLetters(letterPressed);
 
 
     // fill var id to show in HTML
-    console.log(placeHolderArr.join(' '));  // ADDED TODAY - NOT WORKING
+    console.log(placeHolderArr.join(' '));
     document.getElementById("showPlaceHolderArr").innerHTML = placeHolderArr.join(' ');
-    document.getElementById("guessesLeft").innerHTML = guessesLeft;  //ADDED TODAY
+    document.getElementById("guessesLeft").innerHTML = guessesLeft;
 
     // WIN condition if NO BLANKS remain, then increment win counter and start new game
     if (placeHolderArr.includes("__") === false) {
@@ -112,7 +117,7 @@ console.log(randomWordArr);
         alert("This guy can spell!  You win");
         //return startGame();
     }
-    document.getElementById("statusMessage").innerHTML = winMessage;  //ADDED TODAY
+    document.getElementById("statusMessage").innerHTML = winMessage; 
 }
 
 
@@ -131,9 +136,9 @@ function startGame() {
     randomWordArr = randomWord.split("");
     placeHolderArr = getPlaceHolderArr();
     winMessage = ('Keep Guessing!');
-    document.getElementById("userGuesses").innerHTML = userGuesses;  // ADDED TODAY
-    document.getElementById("guessesLeft").innerHTML = guessesLeft;  // ADDED TODAY
-    document.getElementById("statusMessage").innerHTML = winMessage;  // ADDED TODAY
+    document.getElementById("userGuesses").innerHTML = userGuesses; 
+    document.getElementById("guessesLeft").innerHTML = guessesLeft; 
+    document.getElementById("statusMessage").innerHTML = winMessage; 
     activeImageIndex = 0;
     changeImage();
     
@@ -149,7 +154,7 @@ function getPlaceHolderArr() {
     var placeHolderArr = [];
     for (let i = 0; i < randomWordArr.length; i++) {
         placeHolderArr.push('__');
-        document.getElementById("showPlaceHolderArr").innerHTML = placeHolderArr.join(' '); // ADDED TODAY
+        document.getElementById("showPlaceHolderArr").innerHTML = placeHolderArr.join(' '); 
     };
     return placeHolderArr;
 }

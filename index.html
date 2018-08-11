@@ -23,67 +23,69 @@
 
         <h4>Instructions:</h4>
 
-        <h5><i>Press a letter key to begin your first guess.<br>
+        <h5><i>Press a letter key to begin your letter guesses.<br><br>
         Figure out the word to save each word 'thief.'<br>
-        How many 'thieves' can you save?<br>
-        You have a limited number of wrong guesses</i>
+        How many word 'thieves' can you save?<br></i>
         </h5>
         <br>
         <br>   
 
         <!--Picture, data: ROW OF TWO COLUMNS -->
         <div class="row">
-            <div class="col-sm-4 border border-primary" style="background-color: rgb(247, 251, 252);">
+            <div class="col-sm-4" style="background-color: rgb(247, 251, 252);">
                 <img width="80%" id="HangmanPic" src="assets/0HangPic.png" alt"Hangman Start">
-                <!--<img width="80%" var id="totalcombined"> alt"Hangman Start">-->
-                <!--<img width="80%" src="assets/HangPic"+remainingGuessCount+".png" alt"Hangman Start">-->
-                <!--<img width="80%" <var id="currImage"></var> alt"Hangman Start">-->
-                <!--<img width="80%" src="assets/0HangPic.png" alt"Hangman Start"> note this one works--> 
-                Hi!
             </div>
             
-            <!-- below is second colum of first row -->
-            <div class="col-sm-8 border border-secondary" style="background-color: antiquewhite;">
+            <!-- below is second column of first row -->
+            <div class="col-sm-8" style="background-color: antiquewhite;">
 
                     <!--Guess label and number: ROW OF TWO COLUMNS to be put inside the second column of first row -->            
                     <div class="row">
-                        <div class="col-sm-2 border border-secondary" style="background-color: antiquewhite;">
+                        <div class="col-sm-1 border border-secondary" style="background-color: antiquewhite;">
                             <h4><var id="guessesLeft"></var></h4></div>
-                        <div class="col-sm-10 border border-primary">
+                        <div class="col-sm-11">
                             <h5><--- Guesses you have left</h5></div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-sm-12" style="background-color: antiquewhite;">
+                            <h4>.</h4></div>
+                    </div>
                     
+
                     <!--Win, lose message 2nd row inside second column of first ROW OF ONE COLUMN -->
                     <div class="row">
-                        <div class="col-sm-12 border border-primary">
+                        <div class="col-sm-12">
                             <h3><var id="statusMessage"></var></h3><br></div>
                     </div>  
                     
-                    <!--Play again message 3nd row inside second column of first ROW OF ONE COLUMN -->
+                    <!--Play again message 3nd row inside second column of first ROW OF ONE COLUMN
                     <div class="row">
                         <div class="col-sm-12 border border-primary" style="background-color: antiquewhite;">
-                            <h4><var id="gameOver"></var></h4><br></div>
-                    </div>  
-
+                            <h4><var id="overallGameOver"></var></h4><br></div>
+                    </div>   -->
 
 
                     <!--Letters guessed listed 4th row inside second column of first ROW OF ONE COLUMN -->
                     <div class="row">
-                        <div class="col-sm-12 border border-primary" style="background-color: antiquewhite;"><h4>
+                        <div class="col-sm-12" style="background-color: antiquewhite;"><h4>
                             Your letter guesses so far: <var id="userGuesses"></var></h4><h3><span id="userGuesses"></span></h3>
                             <br></div>
                     </div>  
 
                     <!--Placeholder for blank and placed letters  5th row inside second column of first ROW OF ONE COLUMN -->
                     <div class="row">
-                        <div class="col-sm-12 border border-primary" style="background-color: antiquewhite;">
-                            <p><h3><var id="showPlaceHolderArr"></var><--Letters in word</h3></p><br></div>
+                        <div class="col-sm-12 border border-secondary" style="background-color: rgb(224, 217, 207);">
+                            <p><h4>Letters in your word: <var id="showPlaceHolderArr"></var></h4></p></div>
                     </div>
 
                     <!--Placeholder for Wins and Losses in 6th row inside second column of first ROW OF ONE COLUMN -->
                      <div class="row">
-                        <div class="col-sm-12 border border-primary" style="background-color: antiquewhite;">
-                            <p><h4><var id="guessesLeft"></var></h4></p><br></div>
+                        <div class="col-sm-12" style="background-color: antiquewhite;">
+                            <p><h4>Wins: <var id="wins"></var></h4></p>
+                            <p><h4>Losses: <var id="losses"></var></h4></p>
+                            </div>
+                            <!--<p><h4><var id="gamesPlayed"></var>Out of: <var id="limit"></var></h4></p><br></div>-->
                     </div>                   
 
 
